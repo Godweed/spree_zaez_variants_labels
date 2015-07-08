@@ -1,0 +1,17 @@
+<% content_for :page_title do %>
+  <%= link_to Spree.t(:labels), admin_labels_path %> /
+  <%= @label.name %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t(:new_label), new_object_url, {class: 'btn-success', icon: 'add', id: 'admin_new_label'} %>
+<% end %>
+
+<%= render partial: 'spree/admin/shared/error_messages', locals: {target: @label } %>
+
+<%= form_for [:admin, @label], method: :put do |f| %>
+  <fieldset>
+    <%= render partial: 'form', locals: {f: f } %>
+    <%= render partial: 'spree/admin/shared/edit_resource_links' %>
+  </fieldset>
+<% end %>
