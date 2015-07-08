@@ -1,0 +1,12 @@
+<div data-hook="labels">
+  <label><%= Spree.t(:label) %></label>
+  <ul>
+    <% Spree::Label.all.each do |label| %>
+      <li>
+        <label for="label-<%= label.name %>">
+          <%= check_box_tag 'variant[label_ids][]', label.id, @variant.labels.include?(label), {id: "label-#{label.name}"} %> <%= label.name %>
+        </label>
+      </li>
+    <% end %>
+  </ul>
+</div>

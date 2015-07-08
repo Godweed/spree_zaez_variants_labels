@@ -1,0 +1,26 @@
+<div class="row" data-hook="new_label_attrs">
+  <div class="col-md-6">
+    <%= f.field_container :name, :class => ['form-group'] do %>
+      <%= f.label :name, Spree.t(:name) %> <span class="required">*</span>
+      <%= f.text_field :name, class: 'form-control title' %>
+      <% f.error_message_on :name %>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <%= f.field_container :color, :class => ['form-group'] do %>
+      <%= f.label :color, Spree.t(:color) %>
+      <div class="row">
+        <div class="col-md-3">
+          <input type="text" id="colorpicker" class="form-control" />
+        </div>
+        <div class="col-md-9">
+          <%= f.text_field :color, class: 'form-control color-text' %>
+        </div>
+      </div>
+      <%= f.error_message_on :color %>
+    <% end %>
+  </div>
+</div>
+<script type="text/javascript">
+  new window.LabelController('<%= @label.color %>');
+</script>
