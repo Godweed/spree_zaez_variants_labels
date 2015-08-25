@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      spree/label:
+        one: Etiqueta
+        other: Etiquetas
+  spree:
+    label: Etiqueta
+    labels: Etiquetas
+    new_label: Nova Etiqueta
+    color: Cor
+    admin:
+      tab:
+        labels: Etiquetas
