@@ -40,10 +40,13 @@
     <% @collection.each do |label| %>
       <tr data-hook="admin_labels_index_rows" class="<%= cycle('odd', 'even') %>">
         <td><%= label.name %></td>
-        <td><%= label.color %></td>
+        <td>
+          <%= render_label_color label.color %>
+          <%= label.color %>
+        </td>
         <td class="actions actions-2 text-right" data-hook="admin_labels_index_row_actions">
-          <%= link_to_edit label, no_text: true, class: 'edit' %>
-          <%= link_to_delete label, no_text: true %>
+          <%= link_to_edit label, no_text: true, class: 'edit' if can? :edit, Spree::Label %>
+          <%= link_to_delete label, no_text: true if can? :destroy, Spree::Label %>
         </td>
       </tr>
     <% end %>

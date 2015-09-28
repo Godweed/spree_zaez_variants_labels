@@ -2,3 +2,10 @@
 *= require ./spectrum
 *= require ./spectrum_overrides
 */
+
+.variant-label {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-right: 10px;
+}
