@@ -1,0 +1,13 @@
+<!-- insert_top '[data-hook="admin_variant_form_fields"]' -->
+<div data-hook="labels">
+  <label><%= Spree.t(:labels) %></label>
+  <ul>
+    <% Spree::Label.all.each do |label| %>
+        <li>
+          <label for="label-<%= label.name %>">
+            <%= check_box_tag 'variant[label_ids][]', label.id, @variant.labels.include?(label), {id: "label-#{label.name}"} %> <%= label.name %>
+          </label>
+        </li>
+    <% end %>
+  </ul>
+</div>
