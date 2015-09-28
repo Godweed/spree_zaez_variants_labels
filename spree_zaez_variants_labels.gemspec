@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_zaez_variants_labels'
-  s.version     = '3.0.4'
+  s.version     = '3.0.5'
   s.summary     = 'Implementa a criação de labels e a configuração dos mesmos para serem exibidos nas variantes dos produtos'
   s.description = 'Permite que o administrador cadastre labels para as variantes dos produtos e as exiba na listagem de produtos'
   s.required_ruby_version = '>= 2.0.0'
